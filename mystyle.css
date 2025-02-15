@@ -25,6 +25,23 @@ h2 {
 }
 
 
+/*table*/
+
+table {
+    width: 500px;
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin-right: 20px;
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+
 /*utilities*/
 
 .active {
@@ -91,3 +108,61 @@ h2 {
 
 
 /*main */
+
+.main-flex {
+    display: flex;
+    /* Defaul en fila */
+    /*flex-direction: row; */
+    /* Horizintal */
+    justify-content: space-between;
+    /* Vertical */
+    align-items: center;
+    height: 70vh;
+}
+
+.header {
+    width: 50%;
+}
+
+.interests-flex {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* publications*/
+
+.publication-title {
+    color: rgb(51, 179, 141);
+    font-size: 24px;
+}
+
+.publication-authors {
+    font-size: 14px;
+    color: #989191;
+}
+
+.publication-link {
+    color: rgb(12, 116, 121);
+    border: 1px solid rgb(12, 116, 121);
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.publication-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.publication-authors:hover {
+    color: rgb(12, 116, 121);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.publication-link:hover {
+    background-color: rgb(12, 116, 121);
+    color: white;
+}
