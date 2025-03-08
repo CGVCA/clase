@@ -1,0 +1,153 @@
+/*global*/
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: arial;
+    background-color: #222222;
+    color:white;
+}
+p{
+    line-height:2;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+h2{
+    text-align: center;
+}
+/*table*/
+table{
+    width: 500px;
+    border:1px solid white;
+    border-collapse: collapse;
+    margin-right: 20px;
+    text-align: center;
+}
+td,th{
+    border:1px solid white; 
+    padding: 10px;
+}
+/*utilities*/
+.active{
+    color:rgb(12, 116, 121);
+    font-weight: bold;
+}
+.text-primary{
+    color:#807a7a;
+}
+.text-secondary{
+    color:rgb(12, 116, 121);
+}
+.container{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+/*nav*/
+.menu-nav{
+    height: 60px;
+    background-color: white;
+    padding-left:20px;
+}
+.menu-nav a{
+    margin-right: 30px;
+}
+.menu-nav a:hover{
+    color:rgb(12, 116, 121);
+}
+/*header*/
+.my-info{
+    padding-top: 30px;
+    text-align: center; 
+}
+.my-info img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.my-info h1{
+    font-weight: 400;
+    font-size: 42px;
+}
+.my-info p{
+    font-size: 22px;
+}
+/*main*/
+.main-flex{
+    display: flex;
+    justify-content: space-between;/*horizontal*/
+    align-items: center;/*vertical*/
+    height: 70vh;
+}
+header{
+    width:50%;
+}
+.interest-flex{
+    display:flex;
+    justify-content: flex-start;
+}
+
+/*publications*/
+.publication-title{
+    color:rgb(12, 116, 121);
+    font-size: 24px;
+    font-weight: 400;
+}
+.publication-authors{
+    font-size: 14px;
+    color:#989191;
+}
+.publication-link{
+    color:rgb(12, 116, 121);
+    border: 1px solid rgb(12,116,121);
+    border-radius: 3px;
+    padding:3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.publication-title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.publication-authors:hover{
+    color:rgb(12, 116, 121);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.publication-link:hover{
+    background-color:rgb(12, 116, 121);
+    color:white;
+    cursor: pointer;
+}
+
+.text-sombra {
+    text-shadow: 0.1em 0.1em 0.15em #333;
+}
+
+@media(max-width:768px){
+    body{
+        background-color: #6c6c6c;
+    }
+    a{
+        display:none;
+    }
+}
+
+    /* En terminal 
+
+    git add . 
+    git commit -m "etiqueta de la version"
+    git push */
+
+
+    /*En el navegador*/
+
+    /* actualizar el repositorio de github */
