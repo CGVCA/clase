@@ -1,3 +1,6 @@
+// Obtener los iconos para mostrar en el sweet alert
+let json = './img/icons';
+
 //constructor
 function Student(name,age,g1,g2){
     this.name=name;
@@ -16,29 +19,50 @@ let students = JSON.parse(localStorage.getItem("students")) || [];
 
 // Registrar un nuevo estudiante
 function register(){
-    if(inputName.value === ""){
-        alert("Ingresa el nombre");
-        return;
-    }
 
-    let newStudent = new Student(inputName.value, inputAge.value, inputG1.value,inputG2.value);
+    // Obtener valores ya recortados
+    const name = inputName.value.trim();
+    const age = inputAge.value.trim();
+    const g1 = inputG1.value.trim();
+    const g2 = inputG2.value.trim();
 
-    // Agregar el nuevo estudiante al arreglo 'students' para almacenarlo en la memoria local
-    students.push(newStudent);
+    // Verificar si algún campo está vacío
+    if (name === "" && age === "" && g1 === "" && g2 === "") {
+        msg_error("Todos los campos son obligatorios.");
+    } else if (name === "") {
+        msg_error("El nombre es obligatorio.");
+    } else if (age === "") {
+        msg_error("La edad es obligatoria.");
+    } else if (isNaN(age) || parseInt(age) <= 0) {
+        msg_error("La edad debe ser un número mayor a cero.");
+    } else if (g1 === "") {
+        msg_error("La calificación de la materia 1 es obligatoria.");
+    } else if (isNaN(g1) || g1 < 0 || g1 > 10) {
+        msg_error("La calificación de la materia 1 debe estar entre 0 y 10.");
+    } else if (g2 === "") {
+        msg_error("La calificación de la materia 2 es obligatoria.");
+    } else if (isNaN(g2) || g2 < 0 || g2 > 10) {
+        msg_error("La calificación de la materia 2 debe estar entre 0 y 10.");
+    } else{
+        let newStudent = new Student(inputName.value, inputAge.value, inputG1.value,inputG2.value);
 
-    // Guardar el arreglo de estudiantes actualizado en el almacenamiento local (localStorage), 
-    // convirtiendo el arreglo en una cadena JSON para que pueda ser almacenado como texto
-    localStorage.setItem("students", JSON.stringify(students));
+        // Agregar el nuevo estudiante al arreglo 'students' para almacenarlo en la memoria local
+        students.push(newStudent);
 
-    // Actualizar la interfaz de usuario llamando a la función displayStudents(), 
-    // lo que mostrará la lista actualizada de estudiantes en la página
-    displayStudents();
+        // Guardar el arreglo de estudiantes actualizado en el almacenamiento local (localStorage), 
+        // convirtiendo el arreglo en una cadena JSON para que pueda ser almacenado como texto
+        localStorage.setItem("students", JSON.stringify(students));
 
-    // Limpiar los campos de entrada del formulario para que el usuario pueda ingresar nuevos datos
-    inputName.value = "";
-    inputAge.value = "";
-    inputG1.value = "";
-    inputG2.value = "";
+        // Actualizar la interfaz de usuario llamando a la función displayStudents(), 
+        // lo que mostrará la lista actualizada de estudiantes en la página
+        displayStudents();
+
+        // Limpiar los campos de entrada del formulario para que el usuario pueda ingresar nuevos datos
+        inputName.value = "";
+        inputAge.value = "";
+        inputG1.value = "";
+        inputG2.value = "";
+    }    
 }
 
 // Mostrar los estudiantes registrados en pantalla
@@ -100,3 +124,27 @@ function clearStorage(){
       
     });
   });
+
+// Funciones creadas para enviar alertas con sweet alert 2
+
+// alerta de error
+function msg_error(msg) {
+    swal({
+        type: '',
+        title: '',
+        text: '',
+        html: '<lord-icon src="' + `${json}/error.json` + '" trigger="loop" colors="primary:#ffc738,secondary:#e83a30" style="width:128px;height:128px"></lord-icon>' +
+            '<br>' +
+            '<b><h3><strong>Atención :(</strong></h3></b>' +
+            '<h5 style=\"text-align: center !important; margin-top: 20px\"><span class=\"text-danger fw-bold\">' + msg + '</span></h5>' +
+            '<br>',
+        animation: false,
+        customClass: "animate__animated animate__tada",
+        showCancelButton: false,
+        showConfirmButton: false,
+        showCloseButton: true,
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        width: 450,
+    })
+}
