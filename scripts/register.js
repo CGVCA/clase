@@ -1,6 +1,3 @@
-// Obtener los iconos para mostrar en el sweet alert
-let json = './img/icons';
-
 //constructor
 function Student(name,age,g1,g2){
     this.name=name;
@@ -133,7 +130,7 @@ function msg_error(msg) {
         type: '',
         title: '',
         text: '',
-        html: '<lord-icon src="' + `${json}/error.json` + '" trigger="loop" colors="primary:#ffc738,secondary:#e83a30" style="width:128px;height:128px"></lord-icon>' +
+        html: '<lord-icon src="https://cdn.lordicon.com/azxkyjta.json" trigger="loop" colors="primary:#ffc738,secondary:#e83a30" style="width:128px;height:128px"></lord-icon>' +
             '<br>' +
             '<b><h3><strong>Atención :(</strong></h3></b>' +
             '<h5 style=\"text-align: center !important; margin-top: 20px\"><span class=\"text-danger fw-bold\">' + msg + '</span></h5>' +
