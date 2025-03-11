@@ -1,2 +1,1 @@
-"# MGTICS" 
-"# MGTICS" 
+"# clase" 
